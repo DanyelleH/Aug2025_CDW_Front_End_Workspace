@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning Elements</title>
+
+    <style>
+        .static {
+            /* Static => moves with the flow of the page, default position */
+            position: static;
+
+            /* border & size style */
+            width: 200px;
+            height: 50px;
+            border: 5px red solid;
+            font-size: 20px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .relative {
+            /* Relative => move relative to where it was originally */
+            position: relative;
+            left: 90px;
+            top: 50px;
+          
+            /* border & size style */
+            width: 200px;
+            height: 50px;
+            border: 5px green solid;
+            font-size: 20px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .fixed {
+            /* Fixed => stays on the same part of the view, no matter if you scroll */
+            position: fixed;
+            bottom: 50px;
+            right: 0px;
+
+            /* border & size style */
+            width: 200px;
+            height: 50px;
+            border: 5px purple solid;
+            font-size: 20px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .parent {
+            /* parent of absolute element should ALWAYS be relative */
+            position: relative;
+
+            width: 500px;
+            height: 1400px;
+            border: 5px black solid;
+        }
+
+        .absolute {
+            /* Absolute => stay in a fixed position relative to the container it's in */
+            position: absolute;
+            bottom: 0px;
+            right: 30px;
+
+            /* border & size style */
+            width: 200px;
+            height: 50px;
+            border: 5px blue solid;
+            font-size: 20px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .sticky {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+
+            /* border & size style */
+            width: 200px;
+            height: 50px;
+            border: 5px orange solid;
+            font-size: 20px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .floating {
+            /* Float => sometimes associated with positioning, it "floats" or pushes to a part of the page and other elements move around it */
+            float: left;
+
+            /* border & size style */
+            width: 200px;
+            height: 50px;
+            border: 5px pink solid;
+            font-size: 20px;
+            text-align: center;
+            background-color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Positioning Elements</h1>
+
+    <p>There are 5 types of Positioning: <span style="color: red;">static</span>, <span style="color: green;">relative</span>, <span style="color: purple;">fixed</span>, <span style="color: blue;">absolute</span>, and <span style="color: orange;">sticky</span> Below you will see the positioning of each of these in div elements.</p>
+
+    <div class="static">
+        Static Div
+    </div>
+
+    <div class="relative">
+        Relative Div
+    </div>
+
+    <div class="fixed">
+        Fixed Div
+    </div>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus autem magni temporibus, placeat similique error fugiat ad itaque aut ducimus reiciendis iste numquam quia dignissimos excepturi repudiandae consectetur totam fugit?</p>
+
+    <div class="floating">
+        Floating Div
+    </div>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis non esse cumque, recusandae officia voluptates aliquid sapiente, labore facilis similique hic quam totam nam, quidem ea? Provident praesentium adipisci eaque? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel nostrum labore autem sed consectetur perspiciatis, excepturi perferendis repellendus, natus deleniti sequi. Inventore vitae nostrum animi asperiores repudiandae! Eum accusantium sint quam veritatis explicabo vitae in, ad a? Iste eum iusto dignissimos delectus adipisci ullam sapiente maiores accusantium, ipsam mollitia at dolores dolorum explicabo fugit fuga nostrum. Voluptatum eligendi ratione earum in consequatur minus doloribus, excepturi ab dolorum accusamus consequuntur! Quis neque nesciunt perferendis adipisci voluptatem, quae aut doloribus nobis non modi distinctio ex amet eius dolorem, natus necessitatibus voluptates consequatur velit tempore fugit dolore animi tenetur cumque suscipit? Officiis, vel!</p>
+
+    
+
+    <div class="parent">
+
+        <div class="absolute">
+            Absolute Div
+        </div>
+
+    </div>
+
+    <div class="sticky">
+        Sticky Div
+    </div>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" width="500" />
+
+    
+</body>
+</html>
