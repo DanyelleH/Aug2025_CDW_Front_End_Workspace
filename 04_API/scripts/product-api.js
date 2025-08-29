@@ -13,9 +13,8 @@ const deleteBtn = id => {
     btn.classList.add("btn-danger")
     
     // ...and finally the click event listener
-    btn.addEventListener('click', () => {
-        alert("Product Deleted with id = " + id)
-    })
+    // NOTE: updated so it uses newly created deleteProduct() function
+    btn.addEventListener('click', () => deleteProduct(id) )
 
     return btn
 }
@@ -177,6 +176,37 @@ const createProduct = () => {
             })
 
     })
+
+}
+
+
+// DELETE PRODUCT
+const deleteProduct = (id) => {
+
+    // pass product id in URL to delete that product specifically using JSON server
+    // so URL will be localhost:3000/product/1 for ID 1 to delete that product
+    fetch(`${PRODUCT_URL}/${id}`, {
+        method: "DELETE"
+    })
+    .then(response => {
+
+        // will alert the user if product was able to be deleted...
+        if (response.ok) {
+            alert("Product Deleted with id = " + id)
+        } else {
+
+            // ...else error is thrown...
+            throw new Error("Error deleting product")
+        }
+    })
+    .catch(error => {
+        
+        //...and alert box pops up for the user to let them know
+        alert("Error deleting product with id = " + id);
+
+        console.error("Error deleting product:");
+        console.error(error);
+    });
 
 }
 
