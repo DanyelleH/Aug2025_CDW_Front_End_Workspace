@@ -149,7 +149,19 @@ const createProduct = () => {
             },
             body: JSON.stringify(product)
         } )
-            .then( response => response.json() )
+            .then( response => {
+
+                if(response.ok) {
+                    console.log("Product created");
+                }
+                else {
+                    alert("Product could not be created")
+
+                    throw new Error("Error, could not create product")
+                }
+
+                return response.json()
+            } )
             .then( data => {
 
                 // data = product object we just created with a generated ID
