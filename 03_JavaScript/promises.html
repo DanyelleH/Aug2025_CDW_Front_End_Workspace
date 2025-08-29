@@ -67,14 +67,6 @@
                 // remove beginning string and grab only the number
                 let randomNum = result.substring(17)
 
-                // return new Promise( (resolve, reject) => {
-                //     if(randomNum < 75) {
-                //         reject("Number was less than 75")
-                //     }
-
-                //     resolve(randomNum)
-                // } )
-
                 // always going to succeed (no reject here)
                 return new Promise( (resolve) => {
                     resolve(randomNum)
