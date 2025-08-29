@@ -68,9 +68,112 @@ const createRow = (product) => { // product -> product object
 
     // add in the delete and update buttons to the last cell
     const btnCell = document.createElement("td")
+    btnCell.appendChild( updateBtn(product.id) )
+    btnCell.appendChild( deleteBtn(product.id) )
 
+    row.appendChild(btnCell)
 
 
     // add the row to the tbody
-    document.getElementsById("product-t-body").appendChild(row)
+    document.getElementById("product-t-body").appendChild(row)
 }
+
+
+
+
+// LOADING PRODUCTS TO THE TABLE USING THE API
+const getProducts = () => {
+
+    // fetch( url, optional: object that includes method, head, body, etc.  )
+    // .then( callback function checking the intial response back )
+    // .then( callback function doing something with data returned )
+    // .catch( callback function on what to do if there's an error )
+
+    fetch( PRODUCT_URL )
+        .then( (response) => {
+            console.log("RESPONSE:");
+            console.log(response);
+
+            // response.json() => extracts the json data held within object (response body)
+            return response.json();
+        } )
+        .then( (data) => {
+
+            console.log("DATA:");
+            console.log(data); // array of product objects coming from db.json
+            
+            // loop through products in array and create row for each one
+            for(product of data) {
+                createRow(product)
+            }
+
+        } )
+        .catch( (error) => {
+            // printing the error
+            console.error(error)
+        } )
+
+}
+
+// CREATE PRODUCT AFTER SUBMITING FORM
+const createProduct = () => {
+
+    // grabbing the form
+    const form = document.getElementById("product-form")
+
+
+    // create an event listener that takes the data from the form and adds it to the table and does a POST request to our API
+    form.addEventListener('submit', (event) => {
+
+        // prevent default behavior: reloading the page
+        event.preventDefault()
+
+        // get values from the form
+        const name = document.getElementById("product-name").value 
+        const price = document.getElementById("product-price").value 
+        const qty = document.getElementById("product-qty").value 
+
+        // create product object
+        const product = {
+            "name": name,
+            "price": price,
+            "qty": qty
+        }
+
+        // send a POST request 
+        // fetch( URL, optional: method, header, body,... )
+        fetch( PRODUCT_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(product)
+        } )
+            .then( response => response.json() )
+            .then( data => {
+
+                // data = product object we just created with a generated ID
+
+                alert("Product created with ID = " + data.id)
+
+                createRow(data)
+                
+            } )
+            .catch( error => {
+                console.error("Error creating product")
+                console.error(error)
+            })
+
+    })
+
+}
+
+
+
+getProducts()
+
+createProduct()
+
+
+
+
